@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="amoled_background">#000000</color>
+    <color name="surface_card">#15181F</color>
+    <color name="primary_accent">#81C784</color>
+    <color name="text_primary">#E2E8F0</color>
+    <color name="text_secondary">#94A3B8</color>
+    <color name="border_line">#242933</color>
+    <color name="pure_white">#FFFFFF</color>
+    <color name="pastel_red">#F2B8B5</color>
+</resources>

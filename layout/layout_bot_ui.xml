@@ -1,0 +1,3549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:visibility="visible"
+	tools:ignore="HardcodedText, Autofill">
+
+	<FrameLayout
+		android:id="@+id/card_bot_panel"
+		android:layout_width="match_parent"
+		android:layout_height="400dp"
+		android:layout_gravity="bottom"
+		android:layout_marginBottom="-12dp"
+		android:visibility="gone"
+		android:background="@android:color/transparent">
+		<!-- Background Image -->
+		<ImageView
+			android:id="@+id/iv_panel_bg"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"
+			android:visibility="gone" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:background="@drawable/bg_panel_rounded_top">
+			<!-- HEADER PANEL BOT -->
+			<LinearLayout
+				android:id="@+id/layout_bot_header"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:background="#0A0A0A"
+				android:gravity="center_vertical"
+				android:minHeight="48dp"
+				android:orientation="horizontal"
+				android:paddingHorizontal="16dp"
+				android:paddingVertical="4dp">
+				<LinearLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="12dp"
+					android:gravity="center_vertical"
+					android:orientation="vertical">
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:letterSpacing="0.05"
+						android:text="MONEY IS MONEY!!"
+						android:textColor="#39FF14"
+						android:textSize="11sp"
+						android:textStyle="bold" />
+					<TextView
+						android:id="@+id/tv_active_patch_status"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="2dp"
+						android:text="Memuat Profil..."
+						android:textColor="#A1A1A1"
+						android:textSize="8sp"
+						android:textStyle="bold" />
+				</LinearLayout>
+				<android.view.View
+					android:layout_width="1dp"
+					android:layout_height="16dp"
+					android:layout_marginEnd="12dp"
+					android:background="#1A1A1A" />
+				<TextView
+					android:id="@+id/tv_bot_status"
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:ellipsize="marquee"
+					android:focusable="true"
+					android:focusableInTouchMode="true"
+					android:freezesText="true"
+					android:marqueeRepeatLimit="marquee_forever"
+					android:maxLines="1"
+					android:scrollHorizontally="true"
+					android:singleLine="true"
+					android:text="SYSTEM IDLE"
+					android:textColor="#FAFAFA"
+					android:textSize="10sp" />
+				<ImageView
+					android:id="@+id/btn_ghost_protocol"
+					android:layout_width="24dp"
+					android:layout_height="24dp"
+					android:layout_marginStart="12dp"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:clickable="true"
+					android:contentDescription="Ghost Protocol"
+					android:focusable="true"
+					android:padding="4dp"
+					android:src="@drawable/ic_eye"
+					app:tint="#A1A1A1" />
+				<ImageView
+					android:id="@+id/btn_open_terminal"
+					android:layout_width="24dp"
+					android:layout_height="24dp"
+					android:layout_marginStart="8dp"
+					android:background="?attr/selectableItemBackgroundBorderless"
+					android:clickable="true"
+					android:contentDescription="Open Terminal"
+					android:focusable="true"
+					android:padding="3dp"
+					android:src="@drawable/ic_terminal"
+					app:tint="#FFFFFF" />
+			</LinearLayout>
+			<!-- DIVIDER -->
+			<android.view.View
+				android:layout_width="match_parent"
+				android:layout_height="1dp"
+				android:background="#1A1A1A" />
+			<!-- TAB NAVIGATION MOVED TO BOTTOM -->
+			<!-- CONTENT SCROLLVIEW (7 TAB PAGES) -->
+			<ScrollView
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:clipToPadding="false"
+				android:overScrollMode="never"
+				android:paddingHorizontal="16dp"
+				android:paddingTop="16dp"
+				android:paddingBottom="72dp"
+				android:scrollbarSize="2dp">
+				<FrameLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content">
+					<!-- TAB 1: SETUP (UMUM) -->
+					<LinearLayout
+						android:id="@+id/container_tab_umum"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="8dp"
+							android:letterSpacing="0.05"
+							android:text="DESTINATION URL"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="44dp"
+							android:layout_marginBottom="12dp"
+							android:orientation="horizontal">
+							<androidx.cardview.widget.CardView
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_marginEnd="8dp"
+								android:layout_weight="1"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/bot_target_link"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="Masukkan URL Destinasi"
+									android:inputType="textUri"
+									android:paddingHorizontal="12dp"
+									android:textColor="#FAFAFA"
+									android:textColorHint="#888888"
+									android:textSize="11sp" />
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_paste_link"
+								android:layout_width="44dp"
+								android:layout_height="44dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<ImageView
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:padding="12dp"
+									android:src="@drawable/ic_paste"
+									app:tint="#FFFFFF" />
+							</androidx.cardview.widget.CardView>
+						</LinearLayout>
+						<Button
+				android:background="@drawable/bg_btn_elegant"
+							android:id="@+id/btn_clear_load"
+							android:layout_width="match_parent"
+							android:layout_height="44dp"
+							android:layout_marginBottom="12dp"
+							android:text="CLEAR"
+							android:textColor="#FFFFFF"
+							android:textSize="10sp"
+							android:textStyle="normal"
+							 />
+						<CheckBox
+							android:id="@+id/cb_link_timpa"
+							android:layout_width="match_parent"
+							android:layout_height="32dp"
+							android:layout_marginBottom="4dp"
+							android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+							android:text="OVERRIDE URL ON/OFF"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp" />
+						<LinearLayout
+							android:id="@+id/container_link_timpa"
+							android:layout_width="match_parent"
+							android:layout_height="44dp"
+							android:layout_marginBottom="20dp"
+							android:orientation="horizontal"
+							android:visibility="gone">
+							<androidx.cardview.widget.CardView
+								android:layout_width="0dp"
+								android:layout_height="match_parent"
+								android:layout_marginEnd="8dp"
+								android:layout_weight="1"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/et_link_timpa"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="Masukkan URL Override"
+									android:inputType="textUri"
+									android:paddingHorizontal="12dp"
+									android:textColor="#FFFFFF"
+									android:textColorHint="#888888"
+									android:textSize="11sp" />
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_paste_link_timpa"
+								android:layout_width="44dp"
+								android:layout_height="44dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<ImageView
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:padding="12dp"
+									android:src="@drawable/ic_paste"
+									app:tint="#FFFFFF" />
+							</androidx.cardview.widget.CardView>
+						</LinearLayout>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="DATA AKUN"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="32dp"
+							android:orientation="horizontal"
+							android:weightSum="2">
+							<androidx.cardview.widget.CardView
+								android:layout_width="0dp"
+								android:layout_height="44dp"
+								android:layout_marginEnd="8dp"
+								android:layout_weight="1.1"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/bot_phone_input"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="Nomor HP"
+									android:inputType="phone"
+									android:paddingHorizontal="12dp"
+									android:textColor="#FFFFFF"
+									android:textColorHint="#888888"
+									android:textSize="12sp" />
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:layout_width="0dp"
+								android:layout_height="44dp"
+								android:layout_weight="0.9"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<FrameLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent">
+									<EditText
+										android:id="@+id/bot_pass_input"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Password"
+										android:inputType="textPassword"
+										android:paddingStart="12dp"
+										android:paddingEnd="32dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+									<TextView
+										android:id="@+id/btn_toggle_pass"
+										android:layout_width="wrap_content"
+										android:layout_height="match_parent"
+										android:layout_gravity="end|center_vertical"
+										android:clickable="true"
+										android:focusable="true"
+										android:gravity="center"
+										android:paddingHorizontal="12dp"
+										android:text="▼"
+										android:textColor="#A1A1A1"
+										android:textSize="12sp" />
+								</FrameLayout>
+							</androidx.cardview.widget.CardView>
+						</LinearLayout>
+						<Switch
+							android:id="@+id/switch_bot_master"
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_gravity="center"
+							android:layout_marginBottom="16dp"
+							android:text="ON/OF BOT "
+							android:textColor="#FFFFFF"
+							android:textSize="14sp"
+							android:textStyle="bold"
+							android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" android:splitTrack="false" />
+					</LinearLayout>
+					<!-- TAB 2: MODULE (MODUL) -->
+					<LinearLayout
+						android:id="@+id/container_tab_modul"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="NODE SELECTION"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="12dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="12dp">
+								<CheckBox
+									android:id="@+id/cb_phone"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Sync Core Account"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cb_custom"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Sync Custom Account"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+
+								<CheckBox
+									android:id="@+id/cb_mail"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch Mailbox"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cfg_task_daily"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch Daily Data"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cb_tas"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch Core App Data"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cb_update_claim"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch Updates"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								
+								<CheckBox
+									android:id="@+id/cb_liburan"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch Seasonal Data"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cb_bonus"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch Bonus Data"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cb_auto_share"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Propagate Link"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cfg_task_rng"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Fetch RNG Event"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+								<CheckBox
+									android:id="@+id/cb_redeem"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Validate Token"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<LinearLayout
+									android:id="@+id/container_redeem_inputs"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="4dp"
+									android:orientation="vertical"
+									android:paddingStart="24dp"
+									android:visibility="gone">
+									<androidx.cardview.widget.CardView
+										android:layout_width="match_parent"
+										android:layout_height="36dp"
+										android:layout_marginBottom="6dp"
+										app:cardBackgroundColor="#000000"
+										app:cardCornerRadius="10dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/et_redeem_1"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:hint="Token 1"
+											android:inputType="textNoSuggestions"
+											android:paddingHorizontal="12dp"
+											android:textColor="#FAFAFA"
+											android:textColorHint="#888888"
+											android:textSize="10sp" />
+									</androidx.cardview.widget.CardView>
+									<androidx.cardview.widget.CardView
+										android:layout_width="match_parent"
+										android:layout_height="36dp"
+										android:layout_marginBottom="6dp"
+										app:cardBackgroundColor="#000000"
+										app:cardCornerRadius="10dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/et_redeem_2"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:hint="Token 2"
+											android:inputType="textNoSuggestions"
+											android:paddingHorizontal="12dp"
+											android:textColor="#FAFAFA"
+											android:textColorHint="#888888"
+											android:textSize="10sp" />
+									</androidx.cardview.widget.CardView>
+									<androidx.cardview.widget.CardView
+										android:layout_width="match_parent"
+										android:layout_height="36dp"
+										app:cardBackgroundColor="#000000"
+										app:cardCornerRadius="10dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/et_redeem_3"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:hint="Token 3"
+											android:inputType="textNoSuggestions"
+											android:paddingHorizontal="12dp"
+											android:textColor="#FAFAFA"
+											android:textColorHint="#888888"
+											android:textSize="10sp" />
+									</androidx.cardview.widget.CardView>
+								</LinearLayout>
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="CLAIM TIPE"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="12dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="12dp">
+
+								<CheckBox
+									android:id="@+id/cb_update_claim_advanced"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+									android:text="Auto Patch Environment (Advanced)"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+
+								<androidx.cardview.widget.CardView
+									android:id="@+id/btn_patch_selector"
+									android:layout_width="match_parent"
+									android:layout_height="44dp"
+									android:layout_marginHorizontal="8dp"
+									android:layout_marginTop="4dp"
+									android:visibility="gone"
+									android:clickable="true"
+									android:focusable="true"
+									android:foreground="?attr/selectableItemBackground"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<RelativeLayout
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:paddingStart="12dp"
+										android:paddingEnd="12dp">
+										<TextView
+											android:id="@+id/tv_spoof_selector_text"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:layout_alignParentStart="true"
+											android:layout_centerVertical="true"
+											android:layout_toStartOf="@+id/iv_spoof_selector_chevron"
+											android:text="Custom"
+											android:textColor="#FFFFFF"
+											android:textSize="11sp" />
+										<ImageView
+											android:id="@+id/iv_spoof_selector_chevron"
+											android:layout_width="16dp"
+											android:layout_height="16dp"
+											android:layout_alignParentEnd="true"
+											android:layout_centerVertical="true"
+											android:src="@drawable/ic_chevron_down"
+											app:tint="#FFFFFF" />
+									</RelativeLayout>
+								</androidx.cardview.widget.CardView>
+								<androidx.cardview.widget.CardView
+									android:id="@+id/container_spoof_options"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginHorizontal="8dp"
+									android:layout_marginTop="4dp"
+									android:visibility="gone"
+									app:cardBackgroundColor="#2A2A2A"
+									app:cardCornerRadius="8dp"
+									app:cardElevation="0dp">
+									<LinearLayout
+										android:id="@+id/layout_spoof_items"
+										android:layout_width="match_parent"
+										android:layout_height="wrap_content"
+										android:orientation="vertical"
+										android:padding="8dp" />
+								</androidx.cardview.widget.CardView>
+
+								<androidx.cardview.widget.CardView
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginHorizontal="8dp"
+									android:layout_marginTop="4dp"
+									android:layout_marginBottom="4dp"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/et_advanced_package"
+										android:layout_width="match_parent"
+										android:layout_height="44dp"
+										android:background="@null"
+										android:hint="Masukkan Package Custom"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FAFAFA"
+										android:textColorHint="#888888"
+										android:textSize="11sp"
+										android:visibility="gone" />
+								</androidx.cardview.widget.CardView>
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="2dp"
+									android:background="#1A1A1A" />
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="12dp"
+						android:layout_marginBottom="6dp"
+						android:letterSpacing="0.05"
+						android:text="FITUR TAMBAHAN"
+						android:textColor="#A1A1A1"
+						android:textSize="9sp"
+						android:textStyle="bold" />
+					<androidx.cardview.widget.CardView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="16dp"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="12dp"
+						app:cardElevation="0dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:padding="12dp">
+							<CheckBox
+								android:id="@+id/cb_anti_popup"
+								android:layout_width="match_parent"
+								android:layout_height="32dp"
+								android:button="@drawable/cb_custom_blue" android:paddingStart="12dp" android:paddingLeft="12dp"
+								android:text="Enable Blocking Filter"
+								android:textColor="#FAFAFA"
+								android:textSize="11sp" />
+						</LinearLayout>
+					</androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="GAME &amp; SPEEDER"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="12dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="12dp">
+								<CheckBox
+									android:id="@+id/cfg_auto_init"
+									android:layout_width="match_parent"
+									android:layout_height="32dp"
+									android:button="@drawable/cb_custom_blue"
+									android:paddingStart="12dp"
+									android:paddingLeft="12dp"
+									android:text="Auto Init Node"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp" />
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="8dp"
+									android:baselineAligned="false"
+									android:orientation="horizontal"
+									android:paddingStart="24dp">
+									<LinearLayout
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_marginEnd="8dp"
+										android:layout_weight="1.2"
+										android:orientation="vertical">
+										<TextView
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:layout_marginBottom="4dp"
+											android:text="PILIH GAME"
+											android:textColor="#FFFFFF"
+											android:textSize="8sp"
+											android:textStyle="bold" />
+										<androidx.cardview.widget.CardView
+											android:id="@+id/btn_game_selector"
+											android:layout_width="match_parent"
+											android:layout_height="wrap_content"
+											android:clickable="true"
+											android:focusable="true"
+											android:foreground="?attr/selectableItemBackground"
+											app:cardBackgroundColor="#1A1A1A"
+											app:cardCornerRadius="10dp"
+											app:cardElevation="0dp">
+											<RelativeLayout
+												android:layout_width="match_parent"
+												android:layout_height="40dp"
+												android:paddingStart="12dp"
+												android:paddingEnd="12dp">
+												<TextView
+													android:id="@+id/tv_game_selector_text"
+													android:layout_width="wrap_content"
+													android:layout_height="wrap_content"
+													android:layout_alignParentStart="true"
+													android:layout_centerVertical="true"
+													android:layout_toStartOf="@+id/iv_game_selector_chevron"
+													android:text="Memuat Game..."
+													android:textColor="#FFFFFF"
+													android:textSize="11sp"
+													android:textStyle="bold" />
+												<ImageView
+													android:id="@+id/iv_game_selector_chevron"
+													android:layout_width="16dp"
+													android:layout_height="16dp"
+													android:layout_alignParentEnd="true"
+													android:layout_centerVertical="true"
+													android:src="@drawable/ic_chevron_down"
+													app:tint="#FFFFFF" />
+											</RelativeLayout>
+										</androidx.cardview.widget.CardView>
+									</LinearLayout>
+
+									<LinearLayout
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="0.8"
+										android:orientation="vertical">
+										<TextView
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:layout_marginBottom="4dp"
+											android:text="SPEEDER"
+											android:textColor="#FAFAFA"
+											android:textSize="8sp"
+											android:textStyle="bold" />
+										<androidx.cardview.widget.CardView
+											android:id="@+id/btn_speeder_selector"
+											android:layout_width="match_parent"
+											android:layout_height="wrap_content"
+											android:clickable="true"
+											android:focusable="true"
+											android:foreground="?attr/selectableItemBackground"
+											app:cardBackgroundColor="#1A1A1A"
+											app:cardCornerRadius="10dp"
+											app:cardElevation="0dp">
+											<RelativeLayout
+												android:layout_width="match_parent"
+												android:layout_height="40dp"
+												android:paddingStart="12dp"
+												android:paddingEnd="12dp">
+												<TextView
+													android:id="@+id/tv_speeder_selector_text"
+													android:layout_width="wrap_content"
+													android:layout_height="wrap_content"
+													android:layout_alignParentStart="true"
+													android:layout_centerVertical="true"
+													android:layout_toStartOf="@+id/iv_speeder_selector_chevron"
+													android:text="Normal (1x)"
+													android:textColor="#FFFFFF"
+													android:textSize="11sp"
+													android:textStyle="bold" />
+												<ImageView
+													android:id="@+id/iv_speeder_selector_chevron"
+													android:layout_width="16dp"
+													android:layout_height="16dp"
+													android:layout_alignParentEnd="true"
+													android:layout_centerVertical="true"
+													android:src="@drawable/ic_chevron_down"
+													app:tint="#FFFFFF" />
+											</RelativeLayout>
+										</androidx.cardview.widget.CardView>
+										<androidx.cardview.widget.CardView
+											android:id="@+id/container_speeder_options"
+											android:layout_width="match_parent"
+											android:layout_height="wrap_content"
+											android:layout_marginTop="4dp"
+											android:visibility="gone"
+											app:cardBackgroundColor="#1A1A1A"
+											app:cardCornerRadius="10dp"
+											app:cardElevation="0dp">
+											<LinearLayout
+												android:id="@+id/layout_speeder_items"
+												android:layout_width="match_parent"
+												android:layout_height="wrap_content"
+												android:orientation="vertical"
+												android:padding="8dp" />
+										</androidx.cardview.widget.CardView>
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+
+					</LinearLayout>
+					
+					<LinearLayout
+						android:id="@+id/container_tab_v9"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<Switch
+									android:id="@+id/switch_ai_mode"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="8dp"
+									android:text=" AI SONET 4.7"
+									android:textColor="#FFFFFF"
+									android:textSize="13sp"
+									android:textStyle="bold"
+									android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" android:splitTrack="false" />
+								<TextView
+									android:id="@+id/tv_ai_desc"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="16dp"
+									android:text="AI memproses data dan mengatur limit otomatis."
+									android:textColor="#A1A1A1"
+									android:textSize="10sp" />
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="6dp"
+									android:text="TARGET LIMIT (VALUE)"
+									android:textColor="#FFFFFF"
+									android:textSize="9sp"
+									android:textStyle="bold" />
+								<androidx.cardview.widget.CardView
+									android:layout_width="match_parent"
+									android:layout_height="44dp"
+									app:cardBackgroundColor="#000000"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/v9_tp"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="MISAL: 200.000"
+										android:inputType="number"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="13sp"
+										android:textStyle="bold" />
+								</androidx.cardview.widget.CardView>
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+						<LinearLayout
+							android:id="@+id/container_manual_settings"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp"
+								android:letterSpacing="0.05"
+								android:text="MANUAL CONFIGURATION"
+								android:textColor="#A1A1A1"
+								android:textSize="9sp"
+								android:textStyle="bold" />
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginEnd="6dp"
+									android:layout_weight="1"
+									app:cardBackgroundColor="#0A0A0A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/v9_ul1"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Jika Value"
+										android:inputType="number"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+								</androidx.cardview.widget.CardView>
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginStart="6dp"
+									android:layout_weight="1"
+									app:cardBackgroundColor="#0A0A0A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/v9_ua1"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Step Naik"
+										android:inputType="number"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+								</androidx.cardview.widget.CardView>
+							</LinearLayout>
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginEnd="6dp"
+									android:layout_weight="1"
+									app:cardBackgroundColor="#0A0A0A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/v9_ul2"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Jika Value"
+										android:inputType="number"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+								</androidx.cardview.widget.CardView>
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginStart="6dp"
+									android:layout_weight="1"
+									app:cardBackgroundColor="#0A0A0A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/v9_ua2"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Step Naik"
+										android:inputType="number"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+								</androidx.cardview.widget.CardView>
+							</LinearLayout>
+							<androidx.cardview.widget.CardView
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="16dp"
+								app:cardBackgroundColor="#0A0A0A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/v9_da"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="Base Step Sesuai Kuota"
+									android:inputType="number"
+									android:paddingHorizontal="12dp"
+									android:textColor="#FECACA"
+									android:textColorHint="#888888"
+									android:textSize="12sp" />
+							</androidx.cardview.widget.CardView>
+						</LinearLayout>
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginTop="16dp"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<Switch
+									android:id="@+id/switch_user_telegram"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="8dp"
+									android:text="Kirim Ke Telegram Bot"
+									android:textColor="#FAFAFA"
+									android:textSize="13sp"
+									android:textStyle="bold"
+									android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" android:splitTrack="false" />
+								<TextView
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="12dp"
+									android:text="Kirim detail akun take profit langsung ke bot Telegram pribadi Anda."
+									android:textColor="#A1A1A1"
+									android:textSize="10sp" />
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="6dp"
+									android:text="TOKEN BOT TELEGRAM"
+									android:textColor="#FFFFFF"
+									android:textSize="9sp"
+									android:textStyle="bold" />
+								<androidx.cardview.widget.CardView
+									android:layout_width="match_parent"
+									android:layout_height="44dp"
+									android:layout_marginBottom="12dp"
+									app:cardBackgroundColor="#000000"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/et_user_telegram_token"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Masukkan Token Bot"
+										android:inputType="text"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+								</androidx.cardview.widget.CardView>
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="6dp"
+									android:text="CHAT ID TELEGRAM"
+									android:textColor="#FFFFFF"
+									android:textSize="9sp"
+									android:textStyle="bold" />
+								<androidx.cardview.widget.CardView
+									android:layout_width="match_parent"
+									android:layout_height="44dp"
+									app:cardBackgroundColor="#000000"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/et_user_telegram_chat_id"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Masukkan Chat ID"
+										android:inputType="text"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="12sp" />
+								</androidx.cardview.widget.CardView>
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+					</LinearLayout>
+					<!-- TAB 4: STATS -->
+					<LinearLayout
+						android:id="@+id/container_tab_stat"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:letterSpacing="0.05"
+									android:text="list hari ini"
+									android:textColor="#A1A1A1"
+									android:textSize="9sp"
+									android:textStyle="bold" />
+								<TextView
+									android:id="@+id/tv_stat_total_val"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="4dp"
+									android:text="Rp 0"
+									android:textColor="#FFFFFF"
+									android:textSize="24sp"
+									android:textStyle="bold" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginVertical="12dp"
+									android:background="#1A1A1A" />
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<LinearLayout
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:orientation="vertical">
+										<TextView
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="SIKLUS AKUN"
+											android:textColor="#A1A1A1"
+											android:textSize="9sp" />
+										<TextView
+											android:id="@+id/tv_stat_akun_dibuat"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="0"
+											android:textColor="#FFFFFF"
+											android:textSize="14sp"
+											android:textStyle="bold" />
+									</LinearLayout>
+									<LinearLayout
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:orientation="vertical">
+										<TextView
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="BERHASIL TARGET"
+											android:textColor="#FFFFFF"
+											android:textSize="9sp" />
+										<TextView
+											android:id="@+id/tv_stat_akun_tp"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="0"
+											android:textColor="#FFFFFF"
+											android:textSize="14sp"
+											android:textStyle="bold" />
+									</LinearLayout>
+								</LinearLayout>
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="8dp"
+							android:letterSpacing="0.05"
+							android:text="LOG PENDAPATAN HARI INI"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<ScrollView
+							android:id="@+id/scroll_stat_list_tp"
+							android:layout_width="match_parent"
+							android:layout_height="160dp"
+							android:layout_marginBottom="20dp"
+							android:nestedScrollingEnabled="true"
+							android:scrollbarSize="2dp">
+							<LinearLayout
+								android:id="@+id/node_log_today_container"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical" />
+						</ScrollView>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="8dp"
+							android:letterSpacing="0.05"
+							android:text="HISTORY PENDAPATAN 7 HARI"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<LinearLayout
+							android:id="@+id/layout_history_container"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="20dp"
+							android:orientation="vertical" />
+						<Button
+				android:background="@drawable/bg_btn_elegant"
+							android:id="@+id/btn_reset_stat"
+							android:layout_width="match_parent"
+							android:layout_height="44dp"
+							android:text="RESET DATA"
+							android:textColor="#FFFFFF"
+							android:textSize="10sp"
+							android:textStyle="normal"
+							 />
+					</LinearLayout>
+					
+					<LinearLayout
+						android:id="@+id/container_tab_watchdog"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="PENGAMAN ANTI STUCK"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="16dp"
+									android:gravity="center_vertical"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Batas Waktu Stuck (Detik)"
+										android:textColor="#FAFAFA"
+										android:textSize="12sp" />
+									<androidx.cardview.widget.CardView
+										android:layout_width="70dp"
+										android:layout_height="36dp"
+										app:cardBackgroundColor="#000000"
+										app:cardCornerRadius="10dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/watchdog_timeout"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:gravity="center"
+											android:hint="30"
+											android:inputType="number"
+											android:textColor="#FAFAFA"
+											android:textSize="13sp"
+											android:textStyle="bold" />
+									</androidx.cardview.widget.CardView>
+								</LinearLayout>
+								<Switch
+									android:id="@+id/switch_use_watchdog"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:text="TARGET LIMIT (VALUE)"
+									android:textColor="#A1A1A1"
+									android:textSize="12sp"
+									android:textStyle="bold"
+									android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" android:splitTrack="false" />
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="STUCK MONITOR"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#000000"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<TextView
+									android:id="@+id/tv_watchdog_status"
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="12dp"
+									android:text="Status: Idle"
+									android:textColor="#FAFAFA"
+									android:textSize="11sp"
+									android:textStyle="bold" />
+								<android.view.View
+									android:layout_width="match_parent"
+									android:layout_height="1dp"
+									android:layout_marginBottom="12dp"
+									android:background="#1A1A1A" />
+								<TextView
+									android:id="@+id/tv_watchdog_log"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:fontFamily="monospace"
+									android:text="Belum ada stuck."
+									android:textColor="#A1A1A1"
+									android:textSize="10sp" />
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+					</LinearLayout>
+					<!-- TAB 6: NETWORK -->
+					<LinearLayout
+						android:id="@+id/container_tab_network"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="NETWORK ROTATION PROGRESS"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#0A0A0A"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="12dp">
+									<TextView
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:text="Siklus Akun:"
+										android:textColor="#FFFFFF"
+										android:textSize="10sp"
+										android:textStyle="bold" />
+									<TextView
+										android:id="@+id/tv_airplane_progress_text"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentEnd="true"
+										android:text="0 / 3"
+										android:textColor="#FFFFFF"
+										android:textSize="10sp"
+										android:textStyle="bold" />
+								</RelativeLayout>
+								<ProgressBar
+									android:id="@+id/pb_airplane_progress"
+									style="?android:attr/progressBarStyleHorizontal"
+									android:layout_width="match_parent"
+									android:layout_height="6dp"
+									android:layout_marginBottom="16dp"
+									android:max="100"
+									android:progress="0"
+									android:progressBackgroundTint="#1A1A1A"
+									android:progressTint="#FFFFFF" />
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="16dp"
+									android:gravity="center_vertical"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Rotate Tiap (Akun):"
+										android:textColor="#FAFAFA"
+										android:textSize="12sp" />
+									<androidx.cardview.widget.CardView
+										android:layout_width="60dp"
+										android:layout_height="36dp"
+										app:cardBackgroundColor="#000000"
+										app:cardCornerRadius="10dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/airplane_target_count"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:gravity="center"
+											android:hint="3"
+											android:inputType="number"
+											android:textColor="#FFFFFF"
+											android:textSize="13sp"
+											android:textStyle="bold" />
+									</androidx.cardview.widget.CardView>
+								</LinearLayout>
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginBottom="16dp"
+									android:gravity="center_vertical"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Delay Modes (Detik):"
+										android:textColor="#FAFAFA"
+										android:textSize="12sp" />
+									<androidx.cardview.widget.CardView
+										android:layout_width="60dp"
+										android:layout_height="36dp"
+										app:cardBackgroundColor="#000000"
+										app:cardCornerRadius="10dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/airplane_delay_seconds"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:gravity="center"
+											android:hint="15"
+											android:inputType="number"
+											android:textColor="#FFFFFF"
+											android:textSize="13sp"
+											android:textStyle="bold" />
+									</androidx.cardview.widget.CardView>
+								</LinearLayout>
+								<Switch
+									android:id="@+id/switch_use_airplane"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:text="AUTO MODE PESAWAT "
+									android:textColor="#FFFFFF"
+									android:textSize="12sp"
+									android:textStyle="bold"
+									android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" android:splitTrack="false" />
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="NETWORK NODE MONITORING"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="16dp"
+							app:cardBackgroundColor="#000000"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:padding="16dp">
+								<TextView
+									android:id="@+id/tv_live_ip"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:fontFamily="monospace"
+									android:text="Checking IP..."
+									android:textColor="#FFFFFF"
+									android:textSize="14sp"
+									android:textStyle="bold" />
+							</LinearLayout>
+						</androidx.cardview.widget.CardView>
+						<TextView
+							android:layout_width="wrap_content"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="6dp"
+							android:letterSpacing="0.05"
+							android:text="BLOCKED NODE HISTORY"
+							android:textColor="#A1A1A1"
+							android:textSize="9sp"
+							android:textStyle="bold" />
+						<androidx.cardview.widget.CardView
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:layout_marginBottom="24dp"
+							app:cardBackgroundColor="#000000"
+							app:cardCornerRadius="14dp"
+							app:cardElevation="0dp">
+							<TextView
+								android:id="@+id/tv_ip_history"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:fontFamily="monospace"
+								android:lineSpacingExtra="4dp"
+								android:padding="16dp"
+								android:text="IP History Kosong."
+								android:textColor="#A1A1A1"
+								android:textSize="10sp" />
+						</androidx.cardview.widget.CardView>
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="horizontal"
+							android:weightSum="2">
+							<Button
+				android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_tes_modes"
+								android:layout_width="0dp"
+								android:layout_height="44dp"
+								android:layout_marginEnd="6dp"
+								android:layout_weight="1"
+								android:text="TES MODES"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="normal"
+								 />
+							<Button
+				android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_fix_modes"
+								android:layout_width="0dp"
+								android:layout_height="44dp"
+								android:layout_marginStart="6dp"
+								android:layout_weight="1"
+								android:text="FIX MODES"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="normal"
+								 />
+						</LinearLayout>
+					</LinearLayout>
+					<!-- TAB 8: SEWA NOMOR -->
+					
+
+					<!-- TAB 7: SYSTEM -->
+					<LinearLayout
+						android:id="@+id/container_tab_system"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:orientation="vertical"
+						android:visibility="gone">
+
+						<!-- The main panel container with dark background and border -->
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:background="@drawable/bg_system_panel"
+							android:padding="20dp"
+							android:layout_marginBottom="24dp">
+							
+							<!-- SECTION: Upload Foto -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp"
+								android:letterSpacing="0.05"
+								android:text="UPLOAD FOTO"
+								android:textColor="#888888"
+								android:textSize="12sp"
+								android:textStyle="normal" />
+
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="88dp"
+								android:orientation="horizontal"
+								android:weightSum="3"
+								android:baselineAligned="false">
+								
+								<!-- Tile: Panel -->
+								<LinearLayout
+									android:id="@+id/btn_pick_bg"
+									android:layout_width="0dp"
+									android:layout_height="match_parent"
+									android:layout_weight="1"
+									android:layout_marginEnd="5dp"
+									android:background="@drawable/bg_system_tile"
+									android:gravity="center"
+									android:orientation="vertical"
+									android:clickable="true"
+									android:focusable="true">
+									<ImageView
+										android:layout_width="18dp"
+										android:layout_height="18dp"
+										android:src="@drawable/ic_image_outline" />
+									<TextView
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_marginTop="6dp"
+										android:text="Panel"
+										android:textColor="#666666"
+										android:textSize="11sp"
+										android:letterSpacing="0.03"/>
+								</LinearLayout>
+
+								<!-- Tile: Header -->
+								<LinearLayout
+									android:id="@+id/btn_pick_header"
+									android:layout_width="0dp"
+									android:layout_height="match_parent"
+									android:layout_weight="1"
+									android:layout_marginHorizontal="5dp"
+									android:background="@drawable/bg_system_tile"
+									android:gravity="center"
+									android:orientation="vertical"
+									android:clickable="true"
+									android:focusable="true">
+									<ImageView
+										android:layout_width="18dp"
+										android:layout_height="18dp"
+										android:src="@drawable/ic_image_outline" />
+									<TextView
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_marginTop="6dp"
+										android:text="Header"
+										android:textColor="#666666"
+										android:textSize="11sp"
+										android:letterSpacing="0.03"/>
+								</LinearLayout>
+
+								<!-- Tile: FAB -->
+								<LinearLayout
+									android:id="@+id/btn_pick_fab"
+									android:layout_width="0dp"
+									android:layout_height="match_parent"
+									android:layout_weight="1"
+									android:layout_marginStart="5dp"
+									android:background="@drawable/bg_system_tile"
+									android:gravity="center"
+									android:orientation="vertical"
+									android:clickable="true"
+									android:focusable="true">
+									<ImageView
+										android:layout_width="18dp"
+										android:layout_height="18dp"
+										android:src="@drawable/ic_image_outline" />
+									<TextView
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_marginTop="6dp"
+										android:text="FAB"
+										android:textColor="#666666"
+										android:textSize="11sp"
+										android:letterSpacing="0.03"/>
+								</LinearLayout>
+							</LinearLayout>
+
+							<!-- Divider -->
+							<View
+								android:layout_width="match_parent"
+								android:layout_height="1dp"
+								android:background="#1E1E1E"
+								android:layout_marginTop="20dp"
+								android:layout_marginBottom="20dp" />
+
+							<!-- SECTION: Atur Floating Button -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="16dp"
+								android:letterSpacing="0.05"
+								android:text="ATUR FLOATING BUTTON"
+								android:textColor="#888888"
+								android:textSize="12sp"
+								android:textStyle="normal" />
+
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:layout_marginBottom="16dp">
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Transparansi"
+										android:textColor="#AAAAAA"
+										android:textSize="13sp" />
+								</LinearLayout>
+								<SeekBar
+									android:id="@+id/seek_fab_alpha"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="8dp"
+									android:max="100"
+									android:progress="100"
+									android:progressTint="#FFFFFF"
+									android:progressBackgroundTint="#2A2A2A"
+									android:thumb="@drawable/switch_thumb"
+									android:splitTrack="false" />
+							</LinearLayout>
+
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical">
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Ukuran"
+										android:textColor="#AAAAAA"
+										android:textSize="13sp" />
+								</LinearLayout>
+								<SeekBar
+									android:id="@+id/seek_fab_size"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="8dp"
+									android:max="100"
+									android:progress="50"
+									android:progressTint="#FFFFFF"
+									android:progressBackgroundTint="#2A2A2A"
+									android:thumb="@drawable/switch_thumb"
+									android:splitTrack="false" />
+							</LinearLayout>
+
+							<!-- Divider -->
+							<View
+								android:layout_width="match_parent"
+								android:layout_height="1dp"
+								android:background="#1E1E1E"
+								android:layout_marginTop="20dp"
+								android:layout_marginBottom="20dp" />
+
+							<!-- SECTION: Atur Panel UI -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="16dp"
+								android:letterSpacing="0.05"
+								android:text="ATUR PANEL UI"
+								android:textColor="#888888"
+								android:textSize="12sp"
+								android:textStyle="normal" />
+
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:layout_marginBottom="16dp">
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Posisi Tinggi (dari atas)"
+										android:textColor="#AAAAAA"
+										android:textSize="13sp" />
+								</LinearLayout>
+								<SeekBar
+									android:id="@+id/seek_panel_height"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="8dp"
+									android:max="100"
+									android:progress="60"
+									android:progressTint="#FFFFFF"
+									android:progressBackgroundTint="#2A2A2A"
+									android:thumb="@drawable/switch_thumb"
+									android:splitTrack="false" />
+							</LinearLayout>
+
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical">
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<TextView
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:text="Transparansi"
+										android:textColor="#AAAAAA"
+										android:textSize="13sp" />
+								</LinearLayout>
+								<SeekBar
+									android:id="@+id/seek_panel_alpha"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:layout_marginTop="8dp"
+									android:max="100"
+									android:progress="100"
+									android:progressTint="#FFFFFF"
+									android:progressBackgroundTint="#2A2A2A"
+									android:thumb="@drawable/switch_thumb"
+									android:splitTrack="false" />
+							</LinearLayout>
+
+							<!-- Divider -->
+							<View
+								android:layout_width="match_parent"
+								android:layout_height="1dp"
+								android:background="#1E1E1E"
+								android:layout_marginTop="20dp"
+								android:layout_marginBottom="20dp" />
+
+							<!-- SECTION: Config Manager -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="16dp"
+								android:letterSpacing="0.05"
+								android:text="CONFIG MANAGER"
+								android:textColor="#888888"
+								android:textSize="12sp"
+								android:textStyle="normal" />
+
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal"
+								android:weightSum="2"
+								android:layout_marginBottom="16dp">
+								<Button
+									android:id="@+id/btn_backup_config"
+									android:layout_width="0dp"
+									android:layout_height="40dp"
+									android:layout_weight="1"
+									android:layout_marginEnd="5dp"
+									android:background="@drawable/bg_btn_elegant"
+									android:text="Backup"
+									android:textColor="#DDDDDD"
+									android:textSize="13sp"
+									android:textStyle="normal" />
+								<Button
+									android:id="@+id/btn_restore_config"
+									android:layout_width="0dp"
+									android:layout_height="40dp"
+									android:layout_weight="1"
+									android:layout_marginStart="5dp"
+									android:background="@drawable/bg_btn_elegant"
+									android:text="Restore"
+									android:textColor="#DDDDDD"
+									android:textSize="13sp"
+									android:textStyle="normal" />
+							</LinearLayout>
+
+
+
+							<!-- Clear Cache -->
+							<Button
+								android:id="@+id/btn_reset_theme"
+								android:layout_width="wrap_content"
+								android:layout_height="36dp"
+								android:background="@drawable/bg_btn_outline"
+								android:text="Clear Cache"
+								android:textColor="#CCCCCC"
+								android:textSize="13sp"
+								android:textStyle="normal"
+								android:paddingHorizontal="16dp" />
+
+							<!-- Divider -->
+							<View
+								android:layout_width="match_parent"
+								android:layout_height="1dp"
+								android:background="#1E1E1E"
+								android:layout_marginTop="20dp"
+								android:layout_marginBottom="20dp" />
+
+							<!-- SECTION: Mute Audio -->
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal"
+								android:gravity="center_vertical">
+								<TextView
+									android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:layout_weight="1"
+									android:text="Mute Audio"
+									android:textColor="#CCCCCC"
+									android:textSize="13sp" />
+								<Switch
+									android:id="@+id/switch_mute_web"
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:text=""
+									android:thumb="@drawable/switch_thumb"
+									android:track="@drawable/switch_track"
+									android:splitTrack="false" />
+							</LinearLayout>
+						</LinearLayout>
+					</LinearLayout>
+				</FrameLayout>
+			</ScrollView>
+		</LinearLayout>
+
+			<!-- TAB NAVIGATION MOVED TO BOTTOM (FLOATING) -->
+			<eightbitlab.com.blurview.BlurView
+				android:id="@+id/blur_main"
+				android:layout_width="wrap_content"
+				android:layout_height="52dp"
+				android:layout_gravity="bottom|center_horizontal"
+				android:layout_marginBottom="24dp"
+				android:layout_marginHorizontal="24dp"
+				android:background="@drawable/bg_glass_container"
+				android:clipChildren="false"
+				android:clipToPadding="false">
+				
+				<HorizontalScrollView
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:overScrollMode="never"
+					android:scrollbars="none"
+					android:clipChildren="false"
+					android:clipToPadding="false">
+					
+					<FrameLayout
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:paddingHorizontal="8dp"
+						android:clipChildren="false"
+						android:clipToPadding="false">
+
+						<View
+							android:id="@+id/tab_indicator"
+							android:layout_width="80dp"
+							android:layout_height="match_parent"
+							android:layout_gravity="center_vertical"
+							android:background="@drawable/bg_glass_indicator_idle" />
+
+						<LinearLayout
+							android:layout_width="wrap_content"
+							android:layout_height="match_parent"
+							android:gravity="center_vertical"
+							android:orientation="horizontal">
+							<TextView
+								android:id="@+id/tab_menu_umum"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="SETUP"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<TextView
+								android:id="@+id/tab_menu_modul"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="NODE"
+								android:textColor="#A1A1A1"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<TextView
+								android:id="@+id/tab_menu_v9"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="PROCESS"
+								android:textColor="#A1A1A1"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<TextView
+								android:id="@+id/tab_menu_stat"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="STATS"
+								android:textColor="#A1A1A1"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<TextView
+								android:id="@+id/tab_menu_watchdog"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="ANTI STUCK"
+								android:textColor="#A1A1A1"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<TextView
+								android:id="@+id/tab_menu_network"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="NETWORK"
+								android:textColor="#A1A1A1"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<TextView
+								android:id="@+id/tab_menu_system"
+								android:layout_width="80dp"
+								android:layout_height="match_parent"
+								android:gravity="center"
+								android:text="SYSTEM"
+								android:textColor="#A1A1A1"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+						</LinearLayout>
+					</FrameLayout>
+				</HorizontalScrollView>
+			</eightbitlab.com.blurview.BlurView>
+	</FrameLayout>
+	
+	<FrameLayout
+		android:id="@+id/card_terminal_panel"
+		android:layout_width="match_parent"
+		android:layout_height="400dp"
+		android:layout_gravity="bottom"
+		android:layout_marginBottom="-12dp"
+		android:visibility="visible"
+		android:background="@android:color/transparent">
+		<!-- Background Image -->
+		<ImageView
+			android:id="@+id/iv_terminal_bg"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"
+			android:visibility="gone" />
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			android:background="@drawable/bg_panel_rounded_top">
+			
+			<LinearLayout
+				android:id="@+id/layout_terminal_header"
+				android:layout_width="match_parent"
+				android:layout_height="48dp"
+				android:background="#0A0A0A"
+				android:gravity="center_vertical"
+				android:orientation="horizontal"
+				android:paddingHorizontal="16dp">
+				<TextView
+					android:layout_width="0dp"
+					android:layout_height="wrap_content"
+					android:layout_weight="1"
+					android:text="TERMINAL MANAGER"
+					android:textColor="#FFFFFF"
+					android:textSize="12sp"
+					android:textStyle="bold" />
+				<TextView
+					android:id="@+id/btn_close_terminal"
+					android:layout_width="wrap_content"
+					android:layout_height="match_parent"
+					android:clickable="true"
+					android:drawablePadding="4dp"
+					android:focusable="true"
+					android:gravity="center"
+					android:paddingHorizontal="12dp"
+					android:text="TUTUP"
+					android:textColor="#FAFAFA"
+					android:textSize="10sp"
+					android:textStyle="bold"
+					app:drawableStartCompat="@drawable/ic_close"
+					app:drawableTint="#FAFAFA" />
+			</LinearLayout>
+			<!-- TERMINAL TABS MOVED TO BOTTOM -->
+			
+			<ScrollView
+				android:id="@+id/scroll_terminal_main"
+				android:layout_width="match_parent"
+				android:layout_height="0dp"
+				android:layout_weight="1"
+				android:clipToPadding="false"
+				android:paddingBottom="72dp"
+				android:overScrollMode="never"
+				android:scrollbarSize="2dp">
+				<LinearLayout
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:orientation="vertical"
+					android:paddingHorizontal="12dp"
+					android:paddingTop="12dp"
+					android:paddingBottom="12dp">
+					
+					<androidx.cardview.widget.CardView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="16dp"
+						app:cardElevation="2dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:padding="12dp">
+							<!-- HEADER LIVE TO -->
+							<RelativeLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp">
+								<TextView
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:text=" MONITOR PROGRESS"
+									android:textColor="#FFFFFF"
+									android:textSize="10sp"
+									android:textStyle="bold" />
+								<TextView
+									android:id="@+id/tv_live_to_status"
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_alignParentEnd="true"
+									android:background="#1A1A1A"
+									android:paddingHorizontal="6dp"
+									android:paddingVertical="2dp"
+									android:text="IDLE"
+									android:textColor="#A1A1A1"
+									android:textSize="8sp"
+									android:textStyle="bold" />
+							</RelativeLayout>
+							<!-- MAIN PROGRESS DISPLAY -->
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:gravity="center_vertical"
+								android:orientation="horizontal">
+								<TextView
+									android:id="@+id/tv_live_to_percentage"
+									android:layout_width="wrap_content"
+									android:layout_height="wrap_content"
+									android:layout_marginEnd="12dp"
+									android:fontFamily="monospace"
+									android:text="0%"
+									android:textColor="#FFFFFF"
+									android:textSize="22sp"
+									android:textStyle="bold" />
+								<LinearLayout
+									android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:layout_weight="1"
+									android:orientation="vertical">
+									<ProgressBar
+										android:id="@+id/pb_live_to_progress"
+										style="?android:attr/progressBarStyleHorizontal"
+										android:layout_width="match_parent"
+										android:layout_height="8dp"
+										android:layout_marginBottom="2dp"
+										android:max="100"
+										android:progress="0"
+										android:progressBackgroundTint="#1A1A1A"
+										android:progressTint="#FFFFFF" />
+									<TextView
+										android:id="@+id/tv_live_remaining_to"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="Sisa: 0"
+										android:textColor="#FF3131"
+										android:textSize="9sp"
+										android:textStyle="bold" />
+								</LinearLayout>
+							</LinearLayout>
+							<!-- STATS GRID -->
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<LinearLayout
+									android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:layout_marginEnd="4dp"
+									android:layout_weight="1"
+									android:orientation="vertical">
+									<TextView
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="TERKUMPUL"
+										android:textColor="#A1A1A1"
+										android:textSize="7sp"
+										android:textStyle="bold" />
+									<TextView
+										android:id="@+id/tv_live_total_to"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="0"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp"
+										android:textStyle="bold" />
+								</LinearLayout>
+								<LinearLayout
+									android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:layout_marginStart="4dp"
+									android:layout_weight="1"
+									android:orientation="vertical">
+									<TextView
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="TARGET SYNC"
+										android:textColor="#B3FFFFFF"
+										android:textSize="7sp"
+										android:textStyle="bold" />
+									<TextView
+										android:id="@+id/tv_live_target_to"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="0"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp"
+										android:textStyle="bold" />
+								</LinearLayout>
+							</LinearLayout>
+							<!-- CONTROL BUTTONS -->
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<Button
+				android:background="@drawable/bg_btn_elegant"
+									android:id="@+id/btn_start_to"
+									android:layout_width="0dp"
+									android:layout_height="36dp"
+									android:layout_marginEnd="4dp"
+									android:layout_weight="1"
+									android:text="MARK SYNC"
+									android:textColor="#000000"
+									android:textSize="9sp"
+									android:textStyle="normal"
+									app:icon="@android:drawable/ic_media_play"
+									app:iconSize="12dp"
+									app:iconTint="#000000" />
+								<Button
+				android:background="@drawable/bg_btn_elegant"
+									android:id="@+id/btn_stop_to"
+									android:layout_width="0dp"
+									android:layout_height="36dp"
+									android:layout_marginStart="4dp"
+									android:layout_weight="1"
+									android:text="STOP"
+									android:textColor="#FFFFFF"
+									android:textSize="9sp"
+									android:textStyle="normal"
+									 />
+							</LinearLayout>
+						</LinearLayout>
+					</androidx.cardview.widget.CardView>
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="8dp"
+						android:text=" ACCOUNT MANAGER"
+						android:textColor="#FFFFFF"
+						android:textSize="11sp"
+						android:textStyle="bold" />
+					<!-- PAGE AKUN -->
+					<androidx.cardview.widget.CardView
+						android:id="@+id/page_auth_b"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="14dp"
+						app:cardElevation="2dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:padding="12dp">
+							<!-- FILTER TANGGAL JP -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="4dp"
+								android:text="TANGGAL (FILTER)"
+								android:textColor="#A1A1A1"
+								android:textSize="9sp"
+								android:textStyle="bold" />
+							<androidx.cardview.widget.CardView
+								android:id="@+id/node_filter_primary_btn"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="12dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:paddingStart="12dp"
+									android:paddingEnd="12dp">
+									<TextView
+										android:id="@+id/node_filter_primary_txt"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:layout_centerVertical="true"
+										android:text="Pilih Tanggal"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp" />
+									<ImageView
+										android:layout_width="16dp"
+										android:layout_height="16dp"
+										android:layout_alignParentEnd="true"
+										android:layout_centerVertical="true"
+										android:src="@drawable/ic_chevron_down"
+										app:tint="#FFFFFF" />
+								</RelativeLayout>
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/node_filter_primary_opt"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/node_filter_primary_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+							<!-- FILTER AKUN -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="4dp"
+								android:text="PILIH AKUN"
+								android:textColor="#A1A1A1"
+								android:textSize="9sp"
+								android:textStyle="bold" />
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="horizontal"
+								android:gravity="center_vertical"
+								android:layout_marginBottom="12dp">
+								<androidx.cardview.widget.CardView
+									android:id="@+id/node_filter_sec_btn"
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_weight="1"
+									android:clickable="true"
+									android:focusable="true"
+									android:foreground="?attr/selectableItemBackground"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<RelativeLayout
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:paddingHorizontal="12dp">
+										<TextView
+											android:id="@+id/node_filter_sec_txt"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:layout_alignParentStart="true"
+											android:layout_centerVertical="true"
+											android:layout_toStartOf="@+id/iv_akun_jp_chevron"
+											android:text="Pilih Akun"
+											android:textColor="#FFFFFF"
+											android:textSize="11sp" />
+										<ImageView
+											android:id="@+id/iv_akun_jp_chevron"
+											android:layout_width="16dp"
+											android:layout_height="16dp"
+											android:layout_alignParentEnd="true"
+											android:layout_centerVertical="true"
+											android:src="@drawable/ic_chevron_down"
+											app:tint="#FFFFFF" />
+									</RelativeLayout>
+								</androidx.cardview.widget.CardView>
+								<Button
+									android:id="@+id/node_sync_trigger_btn"
+									android:layout_width="wrap_content"
+									android:layout_height="44dp"
+									android:layout_marginStart="8dp"
+									android:background="@drawable/bg_btn_elegant"
+									android:text="MARK DATA"
+									android:textColor="#FFFFFF"
+									android:textSize="9sp"
+									android:paddingHorizontal="12dp"
+									android:minWidth="0dp"
+									android:minHeight="0dp" />
+							</LinearLayout>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/node_filter_sec_opt"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/node_filter_sec_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+							<!-- AKUN AKTIF INPUT -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp"
+								android:text="AKUN AKTIF"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:baselineAligned="false"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginEnd="6dp"
+									android:layout_weight="1"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/input_term_user"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="User ID"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="11sp"
+										android:textStyle="bold" />
+								</androidx.cardview.widget.CardView>
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginStart="6dp"
+									android:layout_weight="1"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/input_term_pass"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="Password"
+										android:inputType="textPassword"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="11sp"
+										android:textStyle="bold" />
+								</androidx.cardview.widget.CardView>
+							</LinearLayout>
+							<Button
+								android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_term_login"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginTop="12dp"
+								android:text=" LOGIN AKUN"
+								android:textColor="#FFFFFF"
+								android:textSize="11sp"
+								android:textStyle="normal" />
+						</LinearLayout>
+					</androidx.cardview.widget.CardView>
+					<!-- PAGE EMAIL -->
+					<androidx.cardview.widget.CardView
+						android:id="@+id/page_auth_c"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						android:visibility="gone"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="14dp"
+						app:cardElevation="2dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:padding="12dp">
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp"
+								android:text="EMAIL BINDING"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<androidx.cardview.widget.CardView
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="8dp"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/input_term_email"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="Email Address"
+									android:inputType="textEmailAddress"
+									android:paddingHorizontal="12dp"
+									android:textColor="#FAFAFA"
+									android:textColorHint="#888888"
+									android:textSize="11sp" />
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/input_term_email_otp"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="OTP Code"
+									android:inputType="number"
+									android:textAlignment="center"
+									android:textColor="#FFFFFF"
+									android:textColorHint="#888888"
+									android:textSize="14sp"
+									android:textStyle="bold" />
+							</androidx.cardview.widget.CardView>
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginTop="12dp"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<Button
+									android:background="@drawable/bg_btn_elegant"
+									android:id="@+id/btn_term_get_email_otp"
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginEnd="4dp"
+									android:layout_weight="1"
+									android:text=" GET OTP"
+									android:textColor="#FFFFFF"
+									android:textSize="10sp"
+									android:textStyle="normal" />
+								<Button
+									android:background="@drawable/bg_btn_elegant"
+									android:id="@+id/btn_term_bind_email"
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginStart="4dp"
+									android:layout_weight="1"
+									android:text=" BIND EMAIL"
+									android:textColor="#FFFFFF"
+									android:textSize="10sp"
+									android:textStyle="normal" />
+							</LinearLayout>
+						</LinearLayout>
+					</androidx.cardview.widget.CardView>
+					<!-- PAGE PHONE -->
+					<androidx.cardview.widget.CardView
+						android:id="@+id/page_term_phone"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="12dp"
+						android:visibility="gone"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="14dp"
+						app:cardElevation="2dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:padding="16dp">
+							<!-- TITLE -->
+							<TextView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp"
+								android:text="VIRTUAL NUMBER"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+
+							<!-- SALDO INFO & TOPUP -->
+							<androidx.cardview.widget.CardView
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:gravity="center_vertical"
+									android:orientation="horizontal"
+									android:padding="12dp">
+									<LinearLayout
+										android:layout_width="0dp"
+										android:layout_height="wrap_content"
+										android:layout_weight="1"
+										android:orientation="vertical">
+										<TextView
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="Total Value:"
+											android:textColor="#A1A1A1"
+											android:textSize="9sp" />
+										<TextView
+											android:id="@+id/tv_term_saldo"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:text="0"
+											android:textColor="#A1A1A1"
+											android:textSize="14sp"
+											android:textStyle="bold" />
+									</LinearLayout>
+									<Button
+										android:id="@+id/btn_term_refresh_saldo"
+										android:layout_width="28dp"
+										android:layout_height="28dp"
+										android:layout_marginEnd="6dp"
+										android:background="@drawable/bg_btn_elegant"
+										android:text="↻"
+										android:textColor="#FFFFFF"
+										android:textSize="14sp"
+										android:textStyle="bold" />
+									<Button
+										android:id="@+id/btn_term_topup"
+										android:layout_width="wrap_content"
+										android:layout_height="28dp"
+										android:background="@drawable/bg_btn_elegant"
+										android:text="ADD VALUE"
+										android:textColor="#FFFFFF"
+										android:textSize="10sp"
+										android:textStyle="bold" />
+								</LinearLayout>
+							</androidx.cardview.widget.CardView>
+
+							<!-- BIND ACCOUNT JAVASCRIPT -->
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:layout_marginBottom="16dp">
+								<TextView
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:text="BIND PHONE ACCOUNT"
+									android:textColor="#A1A1A1"
+									android:textSize="10sp"
+									android:textStyle="bold"
+									android:layout_marginBottom="8dp" />
+								
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal"
+									android:layout_marginBottom="8dp">
+									<androidx.cardview.widget.CardView
+										android:layout_width="0dp"
+										android:layout_height="40dp"
+										android:layout_weight="1"
+										android:layout_marginEnd="8dp"
+										app:cardBackgroundColor="#1A1A1A"
+										app:cardCornerRadius="12dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/input_term_phone"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:hint="Nomor HP"
+											android:textColor="#FFFFFF"
+											android:textColorHint="#555555"
+											android:paddingHorizontal="12dp"
+											android:textSize="12sp" />
+									</androidx.cardview.widget.CardView>
+									<Button
+										android:id="@+id/btn_term_get_phone_otp"
+										android:layout_width="wrap_content"
+										android:layout_height="40dp"
+										android:background="@drawable/bg_btn_elegant"
+										android:text="GET OTP"
+										android:textColor="#FFFFFF"
+										android:textSize="10sp" />
+								</LinearLayout>
+								
+								<LinearLayout
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="horizontal">
+									<androidx.cardview.widget.CardView
+										android:layout_width="0dp"
+										android:layout_height="40dp"
+										android:layout_weight="1"
+										android:layout_marginEnd="8dp"
+										app:cardBackgroundColor="#1A1A1A"
+										app:cardCornerRadius="12dp"
+										app:cardElevation="0dp">
+										<EditText
+											android:id="@+id/input_term_phone_otp"
+											android:layout_width="match_parent"
+											android:layout_height="match_parent"
+											android:background="@null"
+											android:hint="Kode OTP"
+											android:textColor="#FFFFFF"
+											android:textColorHint="#555555"
+											android:paddingHorizontal="12dp"
+											android:textSize="12sp" />
+									</androidx.cardview.widget.CardView>
+									<Button
+										android:id="@+id/btn_term_bind_phone"
+										android:layout_width="wrap_content"
+										android:layout_height="40dp"
+										android:background="@drawable/bg_btn_elegant"
+										android:text="BIND PHONE"
+										android:textColor="#FFFFFF"
+										android:textSize="10sp" />
+								</LinearLayout>
+							</LinearLayout>
+
+							<!-- PILIH SERVER (SPINNER) -->
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_vn_server_selector"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="12dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:paddingStart="12dp"
+									android:paddingEnd="12dp">
+									<TextView
+										android:id="@+id/tv_vn_server_selector"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:layout_centerVertical="true"
+										android:text="Server 1"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp" />
+									<ImageView
+										android:layout_width="16dp"
+										android:layout_height="16dp"
+										android:layout_alignParentEnd="true"
+										android:layout_centerVertical="true"
+										android:src="@drawable/ic_chevron_down"
+										app:tint="#FFFFFF" />
+								</RelativeLayout>
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/container_vn_server_options"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/layout_vn_server_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+
+							<!-- PILIH LAYANAN (SPINNER) -->
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_vn_service_selector"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="12dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:paddingStart="12dp"
+									android:paddingEnd="12dp">
+									<TextView
+										android:id="@+id/tv_vn_service_selector"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:layout_centerVertical="true"
+										android:text="Pilih Layanan"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp" />
+									<ImageView
+										android:layout_width="16dp"
+										android:layout_height="16dp"
+										android:layout_alignParentEnd="true"
+										android:layout_centerVertical="true"
+										android:src="@drawable/ic_chevron_down"
+										app:tint="#FFFFFF" />
+								</RelativeLayout>
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/container_vn_service_options"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/layout_vn_service_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+
+							<!-- PILIH PROVIDER/OPERATOR (SPINNER) -->
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_vn_provider_selector"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="12dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:paddingHorizontal="12dp">
+									<TextView
+										android:id="@+id/tv_vn_provider_selector"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:layout_centerVertical="true"
+										android:layout_toStartOf="@+id/iv_vn_provider_chevron"
+										android:text="Pilih Provider"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp" />
+									<ImageView
+										android:id="@+id/iv_vn_provider_chevron"
+										android:layout_width="16dp"
+										android:layout_height="16dp"
+										android:layout_alignParentEnd="true"
+										android:layout_centerVertical="true"
+										android:src="@drawable/ic_chevron_down"
+										app:tint="#FFFFFF" />
+								</RelativeLayout>
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/container_vn_provider_options"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/layout_vn_provider_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+
+							<!-- PRICE TIER SELECTOR -->
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_vn_price_selector"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="8dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:paddingHorizontal="12dp">
+									<TextView
+										android:id="@+id/tv_vn_price_selector"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:layout_centerVertical="true"
+										android:text="Pilih Harga"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp" />
+									<ImageView
+										android:layout_width="16dp"
+										android:layout_height="16dp"
+										android:layout_alignParentEnd="true"
+										android:layout_centerVertical="true"
+										android:src="@drawable/ic_chevron_down"
+										app:tint="#FFFFFF" />
+								</RelativeLayout>
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/container_vn_price_options"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="8dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<ScrollView
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:maxHeight="180dp">
+									<LinearLayout
+										android:id="@+id/layout_vn_price_items"
+										android:layout_width="match_parent"
+										android:layout_height="wrap_content"
+										android:orientation="vertical"
+										android:padding="8dp" />
+								</ScrollView>
+							</androidx.cardview.widget.CardView>
+
+							<!-- PRICE & STOCK & REFRESH & BUY BUTTON -->
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:gravity="center_vertical"
+								android:orientation="horizontal"
+								android:layout_marginBottom="12dp">
+								<LinearLayout
+									android:layout_width="0dp"
+									android:layout_height="wrap_content"
+									android:layout_weight="1"
+									android:orientation="vertical">
+									<TextView
+										android:id="@+id/tv_vn_price"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="Harga: 0"
+										android:textColor="#A1A1A1"
+										android:textSize="12sp"
+										android:textStyle="bold" />
+									<TextView
+										android:id="@+id/tv_vn_stock"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:text="Stock: -"
+										android:textColor="#666666"
+										android:textSize="9sp" />
+								</LinearLayout>
+								<Button
+									android:id="@+id/btn_vn_refresh_price"
+									android:layout_width="32dp"
+									android:layout_height="32dp"
+									android:layout_marginEnd="6dp"
+									android:background="@drawable/bg_btn_elegant"
+									android:text="↻"
+									android:textColor="#FFFFFF"
+									android:textSize="14sp"
+									android:textStyle="bold" />
+								<Button
+									android:id="@+id/btn_vn_buy"
+									android:layout_width="wrap_content"
+									android:layout_height="36dp"
+									android:background="@drawable/bg_btn_elegant"
+									android:text="BELI NOMOR"
+									android:textColor="#FFFFFF"
+									android:textSize="10sp"
+									android:textStyle="bold" />
+							</LinearLayout>
+
+							<!-- ACTIVE ORDERS CONTAINER -->
+							<LinearLayout
+								android:id="@+id/ll_active_orders_container"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:orientation="vertical"
+								android:visibility="visible">
+							</LinearLayout>
+						</LinearLayout>
+					</androidx.cardview.widget.CardView>
+					<!-- PAGE DOMPET (IMPROVED) -->
+					<androidx.cardview.widget.CardView
+						android:id="@+id/page_auth_a"
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:visibility="gone"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="14dp"
+						app:cardElevation="2dp">
+						<LinearLayout
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:orientation="vertical"
+							android:padding="12dp">
+							<!-- HEADER -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:text=" WALLET &amp; PIN MANAGEMENT"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="bold" />
+							<!-- PIN INPUT -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="4dp"
+								android:text="PIN AKSES"
+								android:textColor="#A1A1A1"
+								android:textSize="9sp" />
+							<androidx.cardview.widget.CardView
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="12dp"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/input_term_pin"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:hint="Masukkan PIN"
+									android:inputType="numberPassword"
+									android:letterSpacing="0.3"
+									android:textAlignment="center"
+									android:textColor="#FFFFFF"
+									android:textColorHint="#888888"
+									android:textSize="14sp"
+									android:textStyle="bold" />
+							</androidx.cardview.widget.CardView>
+							<Button
+				android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_term_set_pin"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginTop="8dp"
+								android:layout_marginBottom="16dp"
+								android:text="SET PIN"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="normal"
+								 />
+							<!-- SAVED WALLETS SECTION -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="6dp"
+								android:text=" DAFTAR TERSIMPAN"
+								android:textColor="#FFFFFF"
+								android:textSize="9sp"
+								android:textStyle="bold" />
+							<androidx.cardview.widget.CardView
+								android:id="@+id/btn_saved_wallets_selector"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginBottom="12dp"
+								android:clickable="true"
+								android:focusable="true"
+								android:foreground="?attr/selectableItemBackground"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<RelativeLayout
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:paddingHorizontal="12dp">
+									<TextView
+										android:id="@+id/tv_saved_wallets_selector"
+										android:layout_width="wrap_content"
+										android:layout_height="wrap_content"
+										android:layout_alignParentStart="true"
+										android:layout_centerVertical="true"
+										android:layout_toStartOf="@+id/iv_saved_wallets_chevron"
+										android:text="Pilih"
+										android:textColor="#FFFFFF"
+										android:textSize="11sp" />
+									<ImageView
+										android:id="@+id/iv_saved_wallets_chevron"
+										android:layout_width="16dp"
+										android:layout_height="16dp"
+										android:layout_alignParentEnd="true"
+										android:layout_centerVertical="true"
+										android:src="@drawable/ic_chevron_down"
+										app:tint="#FFFFFF" />
+								</RelativeLayout>
+							</androidx.cardview.widget.CardView>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/container_saved_wallets_options"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/layout_saved_wallets_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+							<!-- MANUAL INPUT -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="4dp"
+								android:text="ATAU MASUKKAN BARU"
+								android:textColor="#A1A1A1"
+								android:textSize="9sp" />
+							<LinearLayout
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:orientation="horizontal"
+								android:weightSum="2">
+								<androidx.cardview.widget.CardView
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginEnd="6dp"
+									android:layout_weight="1.3"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<EditText
+										android:id="@+id/input_term_rek"
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:background="@null"
+										android:hint="ID"
+										android:inputType="number"
+										android:paddingHorizontal="12dp"
+										android:textColor="#FFFFFF"
+										android:textColorHint="#888888"
+										android:textSize="11sp" />
+								</androidx.cardview.widget.CardView>
+								<androidx.cardview.widget.CardView
+									android:id="@+id/btn_term_metode_selector"
+									android:layout_width="0dp"
+									android:layout_height="44dp"
+									android:layout_marginStart="6dp"
+									android:layout_weight="0.7"
+									android:clickable="true"
+									android:focusable="true"
+									android:foreground="?attr/selectableItemBackground"
+									app:cardBackgroundColor="#1A1A1A"
+									app:cardCornerRadius="12dp"
+									app:cardElevation="0dp">
+									<RelativeLayout
+										android:layout_width="match_parent"
+										android:layout_height="match_parent"
+										android:paddingHorizontal="12dp">
+										<TextView
+											android:id="@+id/tv_term_metode_selector"
+											android:layout_width="wrap_content"
+											android:layout_height="wrap_content"
+											android:layout_alignParentStart="true"
+											android:layout_centerVertical="true"
+											android:layout_toStartOf="@+id/iv_term_metode_chevron"
+											android:text="Metode"
+											android:textColor="#FFFFFF"
+											android:textSize="11sp" />
+										<ImageView
+											android:id="@+id/iv_term_metode_chevron"
+											android:layout_width="16dp"
+											android:layout_height="16dp"
+											android:layout_alignParentEnd="true"
+											android:layout_centerVertical="true"
+											android:src="@drawable/ic_chevron_down"
+											app:tint="#FFFFFF" />
+									</RelativeLayout>
+								</androidx.cardview.widget.CardView>
+							</LinearLayout>
+							<androidx.cardview.widget.CardView
+								android:id="@+id/container_term_metode_options"
+								android:layout_width="match_parent"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="12dp"
+								android:visibility="gone"
+								app:cardBackgroundColor="#2A2A2A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<LinearLayout
+									android:id="@+id/layout_term_metode_items"
+									android:layout_width="match_parent"
+									android:layout_height="wrap_content"
+									android:orientation="vertical"
+									android:padding="8dp" />
+							</androidx.cardview.widget.CardView>
+							<Button
+				android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_term_bind_rek"
+								android:layout_width="match_parent"
+								android:layout_height="44dp"
+								android:layout_marginTop="8dp"
+								android:layout_marginBottom="8dp"
+								android:text="BIND"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="normal"
+								 />
+							<!-- SAVE BUTTON -->
+							<Button
+				android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_save_wallet"
+								android:layout_width="match_parent"
+								android:layout_height="40dp"
+								android:layout_marginBottom="12dp"
+								android:text=" SIMPAN"
+								android:textColor="#FFFFFF"
+								android:textSize="10sp"
+								android:textStyle="normal"
+								 />
+							<!-- NOMINAL INPUT -->
+							<TextView
+								android:layout_width="wrap_content"
+								android:layout_height="wrap_content"
+								android:layout_marginBottom="4dp"
+								android:text="NOMINAL"
+								android:textColor="#A1A1A1"
+								android:textSize="9sp" />
+							<androidx.cardview.widget.CardView
+								android:layout_width="match_parent"
+								android:layout_height="48dp"
+								app:cardBackgroundColor="#1A1A1A"
+								app:cardCornerRadius="12dp"
+								app:cardElevation="0dp">
+								<EditText
+									android:id="@+id/input_term_nominal"
+									android:layout_width="match_parent"
+									android:layout_height="match_parent"
+									android:background="@null"
+									android:fontFamily="monospace"
+									android:hint="Misal: 50.000"
+									android:inputType="number"
+									android:textAlignment="center"
+									android:textColor="#FFFFFF"
+									android:textColorHint="#888888"
+									android:textSize="14sp"
+									android:textStyle="bold" />
+							</androidx.cardview.widget.CardView>
+							<Button
+				android:background="@drawable/bg_btn_elegant"
+								android:id="@+id/btn_term_wd"
+								android:layout_width="match_parent"
+								android:layout_height="45dp"
+								android:layout_marginTop="12dp"
+								android:text="SYNC NOW"
+								android:textColor="#000000"
+								android:textSize="11sp"
+								android:textStyle="normal"
+								 />
+						</LinearLayout>
+					</androidx.cardview.widget.CardView>
+					
+					<TextView
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="24dp"
+						android:layout_marginBottom="8dp"
+						android:text=" SYSTEM CONSOLE"
+						android:textColor="#A1A1A1"
+						android:textSize="11sp"
+						android:textStyle="bold" />
+					<androidx.cardview.widget.CardView
+						android:layout_width="match_parent"
+						android:layout_height="wrap_content"
+						android:layout_marginBottom="120dp"
+						app:cardBackgroundColor="#0A0A0A"
+						app:cardCornerRadius="14dp"
+						app:cardElevation="0dp">
+						<TextView
+							android:id="@+id/tv_terminal_log"
+							android:layout_width="match_parent"
+							android:layout_height="wrap_content"
+							android:fontFamily="monospace"
+							android:lineSpacingExtra="4dp"
+							android:minHeight="100dp"
+							android:padding="12dp"
+							android:text="[SYSTEM] Terminal Ready..."
+							android:textColor="#A1A1A1"
+							android:textSize="9sp" />
+					</androidx.cardview.widget.CardView>
+				</LinearLayout>
+			</ScrollView>
+			</LinearLayout>
+			
+			<!-- TERMINAL TABS MOVED TO BOTTOM -->
+			<eightbitlab.com.blurview.BlurView
+				android:id="@+id/blur_term"
+				android:layout_width="match_parent"
+				android:layout_height="52dp"
+				android:layout_gravity="bottom|center_horizontal"
+				android:layout_marginBottom="24dp"
+				android:layout_marginHorizontal="24dp"
+				android:background="@drawable/bg_glass_container"
+				android:clipChildren="false"
+				android:clipToPadding="false">
+
+				<FrameLayout
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:paddingHorizontal="8dp"
+					android:clipChildren="false"
+					android:clipToPadding="false">
+
+					<View
+						android:id="@+id/tab_indicator_term"
+						android:layout_width="1dp"
+						android:layout_height="match_parent"
+						android:layout_gravity="center_vertical"
+						android:background="@drawable/bg_glass_indicator_idle" />
+
+					<LinearLayout
+						android:layout_width="match_parent"
+						android:layout_height="match_parent"
+						android:gravity="center_vertical"
+						android:orientation="horizontal">
+						<TextView
+							android:id="@+id/tab_term_akun"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:layout_weight="1"
+							android:gravity="center"
+							android:text="AKUN"
+							android:textColor="#FFFFFF"
+							android:textSize="10sp"
+							android:textStyle="bold" />
+						<TextView
+							android:id="@+id/tab_term_email"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:layout_weight="1"
+							android:gravity="center"
+							android:text="EMAIL"
+							android:textColor="#A1A1A1"
+							android:textSize="10sp"
+							android:textStyle="bold" />
+						<TextView
+							android:id="@+id/tab_term_phone"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:layout_weight="1"
+							android:gravity="center"
+							android:text="NOMOR"
+							android:textColor="#A1A1A1"
+							android:textSize="10sp"
+							android:textStyle="bold" />
+						<TextView
+							android:id="@+id/tab_term_dompet"
+							android:layout_width="0dp"
+							android:layout_height="match_parent"
+							android:layout_weight="1"
+							android:gravity="center"
+							android:text="DOMPET"
+							android:textColor="#A1A1A1"
+							android:textSize="10sp"
+							android:textStyle="bold" />
+					</LinearLayout>
+				</FrameLayout>
+			</eightbitlab.com.blurview.BlurView>
+	</FrameLayout>
+	
+	<androidx.cardview.widget.CardView
+		android:id="@+id/fab_bot_console"
+		android:layout_width="48dp"
+		android:layout_height="48dp"
+		android:layout_margin="24dp"
+		android:clickable="true"
+		android:focusable="true"
+		app:cardBackgroundColor="#0A0A0A"
+		app:cardCornerRadius="24dp"
+		app:cardElevation="8dp"
+		app:cardPreventCornerOverlap="false"
+		app:cardUseCompatPadding="false">
+		<!-- Custom Image inside FAB -->
+		<ImageView
+			android:id="@+id/iv_fab_custom_bg"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:scaleType="centerCrop"
+			android:visibility="gone" />
+		<!-- Default Icon inside FAB -->
+		<ImageView
+			android:id="@+id/iv_fab_default_icon"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="12dp"
+			android:scaleType="fitCenter"
+			android:src="@android:drawable/ic_menu_manage"
+			app:tint="#FFFFFF" />
+	</androidx.cardview.widget.CardView>
+	<FrameLayout
+		android:id="@+id/stealth_overlay"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:background="#000000"
+		android:clickable="true"
+		android:elevation="100dp"
+		android:focusable="true"
+		android:visibility="gone">
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:text="Double-Tap to Wake"
+			android:textColor="#0A0A0A"
+			android:textSize="10sp"
+			android:textStyle="bold"
+			android:visibility="gone" />
+	</FrameLayout>
+</FrameLayout>

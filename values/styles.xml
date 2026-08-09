@@ -1,0 +1,6 @@
+<resources>
+    <style name="Theme.MyBrowser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/amoled_background</item>
+        <item name="android:windowBackground">@color/amoled_background</item>
+    </style>
+</resources>

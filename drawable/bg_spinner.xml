@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer Card/Background shape -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#1A1A1A" />
+            <stroke android:width="1dp" android:color="#262626" />
+            <corners android:radius="10dp" />
+        </shape>
+    </item>
+    
+    <!-- Custom chevron arrow vector drawing on the right -->
+    <item
+        android:gravity="end|center_vertical"
+        android:right="12dp">
+        <vector
+            android:width="10dp"
+            android:height="6dp"
+            android:viewportWidth="10"
+            android:viewportHeight="6">
+            <path
+                android:fillColor="#FFFFFF"
+                android:pathData="M 0,0.5 L 5,5.5 L 10,0.5 Z" />
+        </vector>
+    </item>
+</layer-list>

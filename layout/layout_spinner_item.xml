@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Premium spinner item layout (Vercel style when spinner is closed) -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:fontFamily="sans-serif-medium"
+    android:gravity="center_vertical"
+    android:singleLine="true"
+    android:textColor="#FFFFFF"
+    android:textSize="11sp"
+    android:paddingStart="12dp"
+    android:paddingEnd="28dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp" />

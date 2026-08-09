@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_login"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient_dark"
+    android:padding="28dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SYNEX"
+            android:textColor="#00FF41"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.18"
+            android:shadowColor="#8000FF41"
+            android:shadowRadius="22"
+            android:shadowDx="0"
+            android:shadowDy="0"/>
+
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="44dp"
+            android:layout_height="2dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="14dp"
+            android:layout_marginBottom="12dp"
+            android:background="#6600FF41"/>
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SECURE ACCESS TERMINAL"
+            android:textColor="#4A5560"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:fontFamily="monospace"
+            android:letterSpacing="0.3"
+            android:layout_marginBottom="34dp"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- ===== STATE A: LOGIN MANUAL ===== -->
+            <LinearLayout
+                android:id="@+id/layout_manual"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/card_hwid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/bg_surface"
+                    android:padding="18dp"
+                    android:layout_marginBottom="18dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HARDWARE IDENTITY"
+                        android:textColor="#4A5560"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.2"
+                        android:layout_marginBottom="10dp"/>
+
+                    <TextView
+                        android:id="@+id/tv_hwid"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="GENERATING..."
+                        android:textColor="#00E5FF"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:padding="13dp"
+                        android:background="@drawable/bg_inset_cyan"
+                        android:layout_marginBottom="14dp"/>
+
+                    <Button
+                        android:id="@+id/btn_copy_hwid"
+                        android:layout_width="match_parent"
+                        android:layout_height="42dp"
+                        android:background="@drawable/ripple_secondary"
+                        android:textColor="#FFFFFF"
+                        android:text="COPY IDENTIFIER"
+                        android:textSize="11sp"
+                        android:textStyle="normal"
+                        android:fontFamily="monospace"
+                        android:letterSpacing="0.1"/>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tv_key_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LICENSE KEY"
+                    android:textColor="#4A5560"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.2"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginBottom="8dp"/>
+
+                <FrameLayout
+                    android:id="@+id/card_key"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:background="@drawable/bg_inset">
+
+                    <EditText
+                        android:id="@+id/et_license_key"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@null"
+                        android:hint="Masukkan Key dari Admin"
+                        android:textColorHint="#3A4348"
+                        android:textColor="#FFFFFF"
+                        android:textSize="14sp"
+                        android:fontFamily="monospace"
+                        android:gravity="center"
+                        android:inputType="textCapCharacters"
+                        android:letterSpacing="0.05"
+                        android:paddingHorizontal="16dp"/>
+                </FrameLayout>
+
+                <Button
+                    android:id="@+id/btn_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/ripple_primary"
+                    android:textColor="#FFFFFF"
+                    android:text="AUTHORIZE ACCESS"
+                    android:textSize="14sp"
+                    android:textStyle="normal"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.1"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_reset_hwid"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="6dp"
+                        android:background="@drawable/ripple_secondary"
+                        android:textColor="#FFFFFF"
+                        android:text="RESET HWID"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:fontFamily="monospace"/>
+
+                    <Button
+                        android:id="@+id/btn_buy_key"
+                        android:layout_width="0dp"
+                        android:layout_height="42dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="6dp"
+                        android:background="@drawable/ripple_secondary"
+                        android:textColor="#FFFFFF"
+                        android:text="BUY LICENSE"
+                        android:textSize="10sp"
+                        android:textStyle="normal"
+                        android:fontFamily="monospace"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ===== STATE B: VERIFIKASI (RETURNING USER) ===== -->
+            <LinearLayout
+                android:id="@+id/layout_verifying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingVertical="34dp"
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:layout_width="170dp"
+                    android:layout_height="3dp"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:indeterminate="true"
+                    android:indeterminateTint="#00FF41"
+                    android:layout_marginBottom="24dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="RE-AUTHENTICATING IDENTITY"
+                    android:textColor="#4A5560"
+                    android:textSize="11sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:fontFamily="monospace"
+                    android:letterSpacing="0.22"/>
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Status: Standby"
+        android:textColor="#3A4348"
+        android:textSize="10sp"
+        android:gravity="center"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.1"/>
+
+</RelativeLayout>

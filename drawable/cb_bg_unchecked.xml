@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="20dp"
+    android:height="20dp"
+    android:viewportWidth="20"
+    android:viewportHeight="20">
+    <!-- Border rounded rect with fill #2A2A2A and stroke #555555 -->
+    <path
+        android:fillColor="#2A2A2A"
+        android:strokeColor="#555555"
+        android:strokeWidth="1.5"
+        android:pathData="M 3,1.75 C 2.31,1.75 1.75,2.31 1.75,3 L 1.75,17 C 1.75,17.69 2.31,18.25 3,18.25 L 17,18.25 C 17.69,18.25 18.25,17.69 18.25,17 L 18.25,3 C 18.25,2.31 17.69,1.75 17,1.75 Z" />
+</vector>
